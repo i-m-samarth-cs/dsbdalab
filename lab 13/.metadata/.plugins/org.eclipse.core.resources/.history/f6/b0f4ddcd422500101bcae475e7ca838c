@@ -1,0 +1,5 @@
+package com.mapreduce.weather;
+
+public class MyMaxMin {
+
+}

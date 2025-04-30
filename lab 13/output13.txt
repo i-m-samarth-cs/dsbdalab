@@ -1,0 +1,161 @@
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	19909999
+DEBUG-Date	19909999
+DEBUG-Date	19909999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-Date	26509999
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-LineLength	105
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MaxTempStr	50FM-1
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	048599
+DEBUG-MinTempStr	038299
+DEBUG-MinTempStr	038299
+DEBUG-MinTempStr	038299
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMaxTemp	50.1
+DEBUG-ParsedMinTemp	3829.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	3829.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	3829.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+DEBUG-ParsedMinTemp	4859.9
+The Day is Hot Day :19909999	50.1
+The Day is Hot Day :19909999	50.1
+The Day is Hot Day :19909999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1
+The Day is Hot Day :26509999	50.1

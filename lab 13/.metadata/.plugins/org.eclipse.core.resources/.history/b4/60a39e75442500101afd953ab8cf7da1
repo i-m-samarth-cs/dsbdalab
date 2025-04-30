@@ -1,0 +1,118 @@
+package com.mapreduce.weather;
+
+import java.io.IOException;
+import java.util.Iterator;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.conf.Configuration;
+
+public class MyMaxMin {
+
+    public static class MaxTemperatureMapper extends Mapper<LongWritable, Text, Text, Text> {
+        
+        public static final int MISSING = 9999;
+        
+        @Override
+        public void map(LongWritable arg0, Text value, Context context) throws IOException, InterruptedException {
+            String line = value.toString();
+            if ((line.length()) == 0) {
+                return;
+            }
+            
+            // If the line is too short, skip it
+            if (line.length() < 53) {
+                return;
+            }
+            
+            try {
+                String date = line.substring(6, 14);
+                
+                // Check if the substrings can be parsed before attempting to parse
+                String maxTempStr = line.substring(39, 45).trim();
+                String minTempStr = line.substring(47, 53).trim();
+                
+                // Skip records with invalid temperature format
+                if (!isNumeric(maxTempStr) || !isNumeric(minTempStr)) {
+                    return;
+                }
+                
+                float temp_max = Float.parseFloat(maxTempStr);
+                float temp_min = Float.parseFloat(minTempStr);
+                
+                // Convert from tenths of degrees if values are large
+                // Most weather data stores temps as tenths of degrees
+                if (temp_max > 500) {
+                    temp_max = temp_max / 10.0f;
+                }
+                if (temp_min > 500) {
+                    temp_min = temp_min / 10.0f;
+                }
+                
+                if (temp_max > 30.0) {
+                    context.write(new Text("The Day is Hot Day :" + date),
+                                  new Text(String.valueOf(temp_max)));
+                }
+                
+                if (temp_min < 15) {
+                    context.write(new Text("The Day is Cold Day :" + date),
+                                  new Text(String.valueOf(temp_min)));
+                }
+            } catch (Exception e) {
+                // Log or handle any exceptions during processing
+                // Skip this record
+                return;
+            }
+        }
+        
+        // Helper method to check if a string can be parsed as a number
+        private boolean isNumeric(String str) {
+            if (str == null || str.isEmpty()) {
+                return false;
+            }
+            
+            // Handle negative numbers
+            if (str.startsWith("+") || str.startsWith("-")) {
+                str = str.substring(1);
+            }
+            
+            for (char c : str.toCharArray()) {
+                if (!Character.isDigit(c) && c != '.') {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+    
+    public static class MaxTemperatureReducer extends Reducer<Text, Text, Text, Text> {
+        public void reduce(Text key, Iterator<Text> values, Context context) throws IOException, InterruptedException {
+            String temperature = values.next().toString();
+            context.write(key, new Text(temperature));
+        }
+    }
+    
+    public static void main(String[] args) throws Exception {
+        Configuration conf = new Configuration();
+        Job job = new Job(conf, "weather example");
+        job.setJarByClass(MyMaxMin.class);
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(Text.class);
+        job.setMapperClass(MaxTemperatureMapper.class);
+        job.setReducerClass(MaxTemperatureReducer.class);
+        job.setInputFormatClass(TextInputFormat.class);
+        job.setOutputFormatClass(TextOutputFormat.class);
+        Path outputPath = new Path(args[1]);
+        FileInputFormat.addInputPath(job, new Path(args[0]));
+        FileOutputFormat.setOutputPath(job, outputPath);
+        outputPath.getFileSystem(conf).delete(outputPath);
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
+    }
+}

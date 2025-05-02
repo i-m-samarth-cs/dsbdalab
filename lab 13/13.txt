@@ -1,0 +1,46 @@
+from google.colab import files
+uploaded = files.upload()
+
+%%writefile mapreduce_weather.py
+from collections import defaultdict
+import sys
+
+# Dictionaries to store sum and count of metrics
+metrics_sum = defaultdict(float)
+metrics_count = defaultdict(int)
+
+# Reading the file line by line from standard input (stdin)
+for line in sys.stdin:
+    line = line.strip()
+
+    if line:
+        # Split the line by spaces or tabs
+        parts = line.split()
+
+        try:
+            # Extract relevant values for temperature, dew point, and wind speed
+            # Assuming the columns are in the order provided (Temperature: 4th, Dew Point: 5th, Wind Speed: 12th)
+            temperature = float(parts[3])  # Temperature is the 4th column (index 3)
+            dew_point = float(parts[4])    # Dew Point is the 5th column (index 4)
+            wind_speed = float(parts[11])  # Wind Speed is the 12th column (index 11)
+
+            # Add to the sums and increment the count for each metric
+            metrics_sum['temperature'] += temperature
+            metrics_sum['dew_point'] += dew_point
+            metrics_sum['wind_speed'] += wind_speed
+
+            metrics_count['temperature'] += 1
+            metrics_count['dew_point'] += 1
+            metrics_count['wind_speed'] += 1
+
+        except ValueError:
+            # If the conversion to float fails, skip the line
+            continue
+
+# After processing all lines, calculate averages and output
+for metric in ['temperature', 'dew_point', 'wind_speed']:
+    if metrics_count[metric] > 0:
+        average = metrics_sum[metric] / metrics_count[metric]
+        print(f'{metric}_average\t{average:.2f}')
+
+!cat sample_weather.txt | python mapreduce_weather.py

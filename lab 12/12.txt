@@ -1,0 +1,21 @@
+%%writefile mapreduce_log_processor.py
+from collections import defaultdict
+import sys
+
+# Dictionary to store counts of log levels
+log_count = defaultdict(int)
+
+for line in sys.stdin:
+    line = line.strip()
+    
+    # Assuming log level is the first word in each line
+    if line:
+        parts = line.split()
+        log_level = parts[0].upper()  # INFO, ERROR, WARN, etc.
+        log_count[log_level] += 1
+
+# Output the results
+for log_level, count in log_count.items():
+    print(f'{count}\t{log_level}')
+
+!echo -e "INFO Starting server\nERROR Could not connect to database\nWARN Disk space low\nINFO Request completed\nERROR User authentication failed" | python mapreduce_log_processor.py

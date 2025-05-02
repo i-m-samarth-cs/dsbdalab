@@ -1,0 +1,18 @@
+%%writefile mapreduce_combined.py
+from collections import defaultdict
+import sys
+
+word_count = defaultdict(int)
+
+for line in sys.stdin:
+    line = line.strip().lower()
+    line = line.replace(".", " ")
+    words = line.split()
+    
+    for word in words:
+        word_count[word] += 1
+
+for word, count in word_count.items():
+    print(f'{count}\t{word}')
+
+!echo "Hello World. Hello again." | python mapreduce_combined.py
